@@ -12,7 +12,7 @@ export const Fogo = styled.img`
 `;
 
 export const Formato = styled.div`
-    color: var(--Slate-12, #ecedee);
+    color: #ecedee;
     /* Headline/Bold */
     font-family: Nunito;
     font-size: 28px;

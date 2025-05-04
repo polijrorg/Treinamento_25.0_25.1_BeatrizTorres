@@ -3,20 +3,24 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 2vw;
 `;
 
 export const Passaro = styled.img`
-    width: 48px;
-    height: 48px;
+    width: 8vw;
+    height: 8vw;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 56px;
+    max-height: 56px;
 `;
 
 export const Titulo = styled.div`
-    color: var(--Slate-12, #ecedee);
+    color: #ecedee;
     font-family: Nunito;
-    font-size: 24px;
+    font-size: clamp(18px, 2.5vw, 28px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: 6px;
+    letter-spacing: 0.3vw;
 `;

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    justify-content: center; // Alinha horizontalmente
-    align-items: center; // Alinha verticalmente
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    width: 100vw;
 
-    min-height: 100vh;
-    background-color: #0d1117;
+    background-color: var(--Slate-1, #151718);
 `;
 export const ContainerScroll = styled.div`
     display: flex;

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ReactionIconProps {
+    $liked: boolean;
+}
+
 export const ContainerTweet = styled.main`
     display: flex;
     padding: 24px;
@@ -9,17 +13,18 @@ export const ContainerTweet = styled.main`
     align-self: stretch;
     border-radius: 16px;
     background: #202425;
+    position: relative;
 `;
+
 export const Mensagem = styled.div`
     color: #ecedee;
-
-    /* Subtitle/Normal */
     font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 `;
+
 /* Reações */
 export const ContainerC = styled.main`
     display: flex;
@@ -28,20 +33,17 @@ export const ContainerC = styled.main`
     gap: 43px;
 `;
 
-export const Arrow = styled.img`
+export const ReactionIcon = styled.img<ReactionIconProps>`
     width: 20px;
     height: 20px;
+    filter: ${({ $liked }) => ($liked ? 'grayscale(0%)' : 'grayscale(100%)')};
+    transition: filter 0.3s ease;
+    cursor: pointer;
 `;
 
-export const Hurt = styled.img`
-    width: 20px;
-    height: 20px;
-`;
-
-export const Comentario = styled.img`
-    width: 20px;
-    height: 20px;
-`;
+export const Arrow = styled(ReactionIcon)``;
+export const Hurt = styled(ReactionIcon)``;
+export const Comentario = styled(ReactionIcon)``;
 
 /* Perfil */
 export const ContainerB = styled.main`
@@ -49,6 +51,7 @@ export const ContainerB = styled.main`
     align-items: center;
     gap: 8px;
 `;
+
 export const Borda = styled.div`
     display: flex;
     align-items: center;
@@ -76,34 +79,42 @@ export const ContainerA = styled.main`
 `;
 
 export const Nome = styled.div`
-    color: var(--Slate-12, #e1e1e6);
+    color: #e1e1e6;
     text-align: center;
-
-    /* Subtitle/Bold */
     font-family: Nunito;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 `;
+
 export const Username = styled.div`
-    color: var(--Slate-12, #ecedee);
+    color: #ecedee;
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
-
-    /* Body/Body Normal */
     font-family: Nunito;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 171.429% */
+    line-height: 24px;
     letter-spacing: 0.5px;
 `;
+
 export const ContainerScroll = styled.div`
     overflow-y: auto;
-    max-height: calc(100vh - 100px); // ajuste conforme a altura do topo
+    max-height: calc(100vh - 100px);
     padding-right: 8px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+`;
+
+/* Ícone da lixeira */
+export const TrashIcon = styled.img`
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
 `;
